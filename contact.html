@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Editorial Inquiries | NexusSphere</title>
+  <meta name="description" content="Get in touch with the NexusSphere editorial desk, submit technical manuscripts, propose story tips, or inquire about partnerships.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-icon">⚡</span>
+        NexusSphere
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="categories.html" class="nav-link">Categories</a></li>
+          <li><a href="article.html" class="nav-link">Featured Article</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+        <a href="categories.html" class="btn btn-primary">Explore Hub</a>
+        <button class="mobile-menu-toggle" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="container section-padding">
+    <div class="section-header" style="text-align: center; justify-content: center; flex-direction: column; max-width: 700px; margin: 0 auto 3rem;">
+      <div class="hero-badge badge-tech">Get in Touch</div>
+      <h1 style="font-family: var(--font-heading); font-size: 2.75rem; font-weight: 800;">
+        We Welcome <span class="text-gradient">Dialogue &amp; Discovery</span>
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-secondary);">
+        Whether you are a researcher proposing a peer-reviewed submission, a reader with a story tip, or an organization seeking media accreditation, our team is ready to connect.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+          Send an Editorial Inquiry
+        </h3>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Dr. Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" class="form-control" placeholder="jane@institute.org" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Department / Subject</label>
+            <select id="subject" class="form-control" required>
+              <option value="">Select inquiry type...</option>
+              <option value="research">Manuscript &amp; Research Pitch</option>
+              <option value="press">Press Room &amp; Media Inquiries</option>
+              <option value="corrections">Editorial Feedback &amp; Corrections</option>
+              <option value="partnerships">Syndication &amp; Partnerships</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" rows="5" placeholder="Detail your proposal, research context, or inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Message</button>
+        </form>
+      </div>
+
+      <!-- Office Coordinates & FAQ Accordion -->
+      <div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">
+            Global Editorial Bureaus
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <div>
+              <strong style="color: var(--text-primary);">📍 San Francisco Hub</strong><br>
+              500 Howard Street, Suite 1400, San Francisco, CA 94105
+            </div>
+            <div>
+              <strong style="color: var(--text-primary);">📍 London Bureau</strong><br>
+              25 King Street, Covent Garden, London WC2E 8HN
+            </div>
+            <div>
+              <strong style="color: var(--text-primary);">📧 Direct Email Desks</strong><br>
+              Editorial: <a href="mailto:editorial@nexussphere.io">editorial@nexussphere.io</a><br>
+              Press: <a href="mailto:press@nexussphere.io">press@nexussphere.io</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">
+          Frequently Asked Questions
+        </h3>
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">
+              How do I submit a guest manuscript or research paper?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Submit your abstract and author credentials via our contact form selecting 'Manuscript &amp; Research Pitch'. Our peer review committee evaluates submissions within 5 business days.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I republish or syndicate NexusSphere articles?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes, we offer Creative Commons and direct syndication licenses for universities, non-profits, and educational institutions with proper attribution and canonical links.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What is your policy on generative AI tools in journalism?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              All published text is synthesized, written, and fact-verified by named human experts and fellows. AI tools are utilized strictly for data parsing and visual simulations with explicit disclosure.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-icon">⚡</span>
+            NexusSphere
+          </a>
+          <p>NexusSphere is an authoritative digital publication dedicated to illuminating breakthroughs across artificial intelligence, future tech, biotechnology, and modern progress.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Exploration</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="categories.html">All Categories</a></li>
+            <li><a href="article.html">Flagship Editorial</a></li>
+            <li><a href="categories.html">Trending Insights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About NexusSphere</a></li>
+            <li><a href="about.html">Editorial Standards</a></li>
+            <li><a href="contact.html">Careers &amp; Fellows</a></li>
+            <li><a href="contact.html">Press Room</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Ethics &amp; Corrections</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NexusSphere Media Inc. All rights reserved.</p>
+        <p>Engineered for speed, accessibility, and high-impact visual journalism.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

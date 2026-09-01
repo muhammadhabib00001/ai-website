@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories &amp; Content Directory | NexusSphere</title>
+  <meta name="description" content="Explore articles by categories: Artificial Intelligence, Smart Cities, Biotechnology, Macro Economics, Clean Energy, and Future Tech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-icon">⚡</span>
+        NexusSphere
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="categories.html" class="nav-link active">Categories</a></li>
+          <li><a href="article.html" class="nav-link">Featured Article</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Theme">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+        <a href="categories.html" class="btn btn-primary">Explore Hub</a>
+        <button class="mobile-menu-toggle" aria-label="Open Navigation Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Hero & Filter Interface -->
+  <main class="container section-padding">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <div class="section-header-content">
+        <div class="hero-badge badge-tech">Taxonomy &amp; Archive</div>
+        <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em;">
+          Explore by Category &amp; Discipline
+        </h1>
+        <p>Filter across cutting-edge research topics or search our complete library of analytical essays and dispatches.</p>
+      </div>
+    </div>
+
+    <!-- Live Filter & Search Toolbar -->
+    <div class="filter-toolbar">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Topics (12)</button>
+        <button class="filter-btn" data-filter="ai">🤖 AI &amp; Agents</button>
+        <button class="filter-btn" data-filter="cities">🏙️ Smart Cities</button>
+        <button class="filter-btn" data-filter="biotech">🧬 Biotech &amp; Health</button>
+        <button class="filter-btn" data-filter="economics">📊 Economics</button>
+        <button class="filter-btn" data-filter="energy">⚡ Clean Energy</button>
+      </div>
+
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search titles, authors, keywords...">
+      </div>
+    </div>
+
+    <!-- Dynamic Articles Grid -->
+    <div class="articles-grid">
+      <!-- Card 1 (AI) -->
+      <article class="article-card filterable-card" data-category="ai">
+        <div class="article-card-thumb">
+          <img src="assets/images/ai_future_hero.jpg" alt="AI Reasoning">
+          <span class="article-badge badge-ai">Artificial Intelligence</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Sept 1, 2026</span>
+            <span>⏱️ 12 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">The Definitive Guide to Artificial General Intelligence and Human Synergy</a>
+          </h3>
+          <p class="article-card-excerpt">
+            How multi-modal reasoning models, autonomous agent frameworks, and embodied neural architectures are reshaping industry and cognition.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Dr. Elena Vance">
+              <div class="author-mini-info">
+                <h4>Dr. Elena Vance</h4>
+                <span>1,650+ Words</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 (Smart Cities) -->
+      <article class="article-card filterable-card" data-category="cities">
+        <div class="article-card-thumb">
+          <img src="assets/images/smart_city.jpg" alt="Autonomous Cities">
+          <span class="article-badge badge-tech">Smart Cities</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Aug 28, 2026</span>
+            <span>⏱️ 8 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">Designing Autonomous Urban Centers: The Zero-Emission Metropolis</a>
+          </h3>
+          <p class="article-card-excerpt">
+            How municipal sensor meshes, autonomous electric transport grids, and vertical biophilic architecture are redefining sustainable living.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Marcus Chen">
+              <div class="author-mini-info">
+                <h4>Marcus Chen</h4>
+                <span>Urban Systems</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 (Biotech) -->
+      <article class="article-card filterable-card" data-category="biotech">
+        <div class="article-card-thumb">
+          <img src="assets/images/biotech_health.jpg" alt="Biotech Lab">
+          <span class="article-badge badge-science">Biotech &amp; Health</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Aug 24, 2026</span>
+            <span>⏱️ 10 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">Molecular Simulation &amp; The Acceleration of Precision Therapeutics</a>
+          </h3>
+          <p class="article-card-excerpt">
+            Predictive structural biology foundation models are slashing therapeutic drug discovery timelines from a decade to mere weeks.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Dr. Sarah Jenkins">
+              <div class="author-mini-info">
+                <h4>Dr. Sarah Jenkins</h4>
+                <span>Genomics Lead</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 (AI Workstation) -->
+      <article class="article-card filterable-card" data-category="ai">
+        <div class="article-card-thumb">
+          <img src="assets/images/workspace_future.jpg" alt="Future Developer Setup">
+          <span class="article-badge badge-ai">Artificial Intelligence</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Aug 20, 2026</span>
+            <span>⏱️ 7 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">Synthetic Pair Programming: Multi-Agent Software Architecture</a>
+          </h3>
+          <p class="article-card-excerpt">
+            Empirical metrics from 500 engineering teams integrating autonomous code generation, continuous fuzz testing, and self-healing deploys.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="David Sterling">
+              <div class="author-mini-info">
+                <h4>David Sterling</h4>
+                <span>DevOps Architect</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 (Economics) -->
+      <article class="article-card filterable-card" data-category="economics">
+        <div class="article-card-thumb">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80" alt="Global Economics">
+          <span class="article-badge badge-business">Macro Economics</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Aug 15, 2026</span>
+            <span>⏱️ 9 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">The Compute Standard: How Energy &amp; Silicon Became Global Currency</a>
+          </h3>
+          <p class="article-card-excerpt">
+            An economic inquiry into sovereign compute funds, international semiconductor treaties, and the decentralization of foundational compute clusters.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80" alt="Arthur Pendelton">
+              <div class="author-mini-info">
+                <h4>Arthur Pendelton</h4>
+                <span>Economist</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 (Clean Energy) -->
+      <article class="article-card filterable-card" data-category="energy">
+        <div class="article-card-thumb">
+          <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&auto=format&fit=crop&q=80" alt="Wind and Solar Energy">
+          <span class="article-badge badge-tech">Clean Energy</span>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span>📅 Aug 10, 2026</span>
+            <span>⏱️ 6 min read</span>
+          </div>
+          <h3 class="article-card-title">
+            <a href="article.html">Perovskite Tandem Cells: Breaking the 35% Photovoltaic Barrier</a>
+          </h3>
+          <p class="article-card-excerpt">
+            Laboratory breakthroughs in perovskite crystalline stability promise a dramatic reduction in cost-per-watt for commercial solar generation.
+          </p>
+          <div class="article-card-footer">
+            <div class="author-mini">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Claire Beaulieu">
+              <div class="author-mini-info">
+                <h4>Claire Beaulieu</h4>
+                <span>Energy Physicist</span>
+              </div>
+            </div>
+            <a href="article.html" class="read-more-link">Read &rarr;</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-icon">⚡</span>
+            NexusSphere
+          </a>
+          <p>NexusSphere is an authoritative digital publication dedicated to illuminating breakthroughs across artificial intelligence, future tech, biotechnology, and modern progress.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Exploration</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="categories.html">All Categories</a></li>
+            <li><a href="article.html">Flagship Editorial</a></li>
+            <li><a href="categories.html">Trending Insights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About NexusSphere</a></li>
+            <li><a href="about.html">Editorial Standards</a></li>
+            <li><a href="contact.html">Careers &amp; Fellows</a></li>
+            <li><a href="contact.html">Press Room</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact &amp; Legal</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="privacy.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Ethics &amp; Corrections</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NexusSphere Media Inc. All rights reserved.</p>
+        <p>Engineered for speed, accessibility, and high-impact visual journalism.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
