@@ -1,0 +1,72 @@
+name: Google Drive Upload Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  drive-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Google APIs
+        run: |
+          pip install --upgrade google-api-python-client google-auth
+
+      - name: Create test file
+        run: |
+          echo "Newskrypt AI Automation - Google Drive Test" > test.txt
+
+      - name: Upload to Google Drive
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+        run: |
+          python <<'PY'
+          import os
+          import json
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+          from googleapiclient.http import MediaFileUpload
+
+          key = json.loads(os.environ["GCP_SA_KEY"])
+
+          credentials = service_account.Credentials.from_service_account_info(
+              key,
+              scopes=["https://www.googleapis.com/auth/drive"]
+          )
+
+          drive = build(
+              "drive",
+              "v3",
+              credentials=credentials
+          )
+
+          file_metadata = {
+              "name": "newskrypt-drive-test.txt",
+              "parents": [os.environ["DRIVE_FOLDER_ID"]]
+          }
+
+          media = MediaFileUpload(
+              "test.txt",
+              mimetype="text/plain"
+          )
+
+          result = drive.files().create(
+              body=file_metadata,
+              media_body=media,
+              fields="id,name,webViewLink"
+          ).execute()
+
+          print("SUCCESS!")
+          print("File ID:", result["id"])
+          print("File:", result["name"])
+          print("Drive Link:", result.get("webViewLink"))
+          PY
