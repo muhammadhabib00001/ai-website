@@ -1,0 +1,93 @@
+﻿name: NexusSphere AI Content & Google Drive Automation
+
+on:
+  schedule:
+    # Run every Monday at 06:00 AM UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Specific topic/brief to generate (leave empty to fetch from Drive)'
+        required: false
+        default: 'Autonomous Agent Orchestration and Future Multi-Modal Systems'
+      drive_folder_id:
+        description: 'Google Drive input folder ID'
+        required: false
+        default: ''
+      backup_folder_id:
+        description: 'Google Drive output/backup folder ID'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Dry run mode (test pipeline without live API billing)'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Authenticate with Google Cloud (Vertex AI & Drive)
+        if: ${{ env.GCP_SA_KEY != '' }}
+        run: |
+          echo "${{ secrets.GCP_SA_KEY }}" > sa_credentials.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=sa_credentials.json" >> $GITHUB_ENV
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Run Content & Drive Automation Pipeline
+        env:
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCP_SA_KEY_PATH: sa_credentials.json
+          DRIVE_FOLDER_ID: ${{ github.event.inputs.drive_folder_id || secrets.DRIVE_FOLDER_ID }}
+          DRIVE_BACKUP_FOLDER_ID: ${{ github.event.inputs.backup_folder_id || secrets.DRIVE_BACKUP_FOLDER_ID }}
+        run: |
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+
+          TOPIC_ARG=""
+          if [ -n "${{ github.event.inputs.topic }}" ]; then
+            TOPIC_ARG="--topic '${{ github.event.inputs.topic }}'"
+          fi
+
+          python scripts/drive_vertex_pipeline.py $DRY_RUN_FLAG $TOPIC_ARG
+
+      - name: Cleanup Credentials
+        if: always()
+        run: |
+          rm -f sa_credentials.json
+
+      - name: Commit and Push New Publications to GitHub
+        run: |
+          git config --global user.name "NexusSphere Automation Bot"
+          git config --global user.email "bot@nexussphere.io"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No new files or changes to commit."
+          else
+            git commit -m "Automated Publication: Fresh research deep-dive generated via Vertex AI [skip ci]"
+            git push origin main
+          fi
